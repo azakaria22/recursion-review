@@ -5,5 +5,18 @@
 
 var stringifyJSON = function(obj) {
   // your code goes here
-  console.log('this is test code');
+  var result = '';
+
+  //if/else for - isinstanceof Array; string; etc
+  if (obj instanceof Number) {
+    result += obj;
+  }
+
+
+  if (obj instanceof Array) {
+    console.log("it's an array");
+    
+  }
+
+  return result;
 };
