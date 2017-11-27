@@ -19,14 +19,16 @@ var stringifyJSON = function(obj) {
 
   } else if (typeof obj === 'string') {
     result = '"' + obj + '"';
-  }
-
   
-
-
-  if (obj instanceof Array) {
-    console.log("it's an array");
-    
+  } else if (obj instanceof Array) {
+    result = '[';
+    for (var i = 0; i < obj.length; i++) {
+      result += stringifyJSON(obj[i]);
+      if (i < obj.length - 1) {
+        result += ',';
+      }
+    }
+     result += ']';
   }
 
   return result;
