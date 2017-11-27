@@ -8,9 +8,20 @@ var stringifyJSON = function(obj) {
   var result = '';
 
   //if/else for - isinstanceof Array; string; etc
-  if (obj instanceof Number) {
+  if (typeof obj === 'number') {
     result += obj;
+  
+  } else if (obj === null) {
+    result += obj;
+  
+  } else if (typeof obj === 'boolean') {
+    result += obj;
+
+  } else if (typeof obj === 'string') {
+    result = '"' + obj + '"';
   }
+
+  
 
 
   if (obj instanceof Array) {
